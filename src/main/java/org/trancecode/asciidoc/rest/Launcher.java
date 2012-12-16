@@ -57,6 +57,7 @@ public final class Launcher
         context.setContextPath("/");
         server.setHandler(context);
         context.addServlet(new ServletHolder(new AsciidocEndPoint()), "/html/*");
+        context.addServlet(new ServletHolder(new StaticResource()), "/favicon.ico");
         server.start();
         server.join();
     }

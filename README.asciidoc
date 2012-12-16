@@ -1,0 +1,66 @@
+
+A REST endpoint to render Asciidoc source files
+
+== Build
+
+----
+$ mvn clean install
+----
+
+== Run
+
+----
+$ java -jar target/tc-asciidoc-rest-*-launcher.jar
+----
+
+You can define the following properties through the usual `-Dname=value`
+arguments:
+
+- `http.port`: port number for the inbound HTTP connections. Default value is
+  `8080`.
+- `logging.level`: the logger level. Allowed values are `TRACE`,
+  `DEBUG`, `INFO`, `WARN`, `ERROR` and `FATAL`. Default value is `INFO`.
+
+NOTE: To allow the execution of the launcher as an http://heroku.com/[Heroku]
+application, the `PORT` environment variable can be used the HTTP port number.
+
+== Use
+
+Basically you just need to insert your REST endpoint URL *before* the host name
+part of the URL you want to transform. The first element of the path should be
+the name of a configuration template for Asciidoc (e.g. `/html/` which renders
+to HTML).
+
+=== Basic example
+
+If your endpoint is at:
+
+----
+http://localhost:8080/
+----
+
+To transform the following source file to HTML:
+
+----
+http://github.com/herve-quiroz/tc-asciidoc-rest/raw/master/README.asciidoc
+----
+
+Use the following URL:
+
+----
+http://localhost:8080/html/github.com/herve-quiroz/tc-asciidoc-rest/raw/master/README.asciidoc
+----
+
+== On-line access point
+
+http://asciidoc.trancecode.org/
+
+Example use: http://asciidoc.trancecode.org/html/github.com/herve-quiroz/tc-asciidoc-rest/raw/master/README.asciidoc
+
+== TODO
+
+- Cache the result pages
+- Replace `.html` suffix by `.asciidoc` when needed
+- PDF output
+
+// vim: set syntax=asciidoc:

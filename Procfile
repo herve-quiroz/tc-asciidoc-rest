@@ -1,1 +1,1 @@
-web:	java -Dlogging.level=DEBUG -Djava.io.tmpdir=./target -jar target/tc-asciidoc-rest-*-launcher.jar
+web:	java -Xmx256m -Dlogging.level=DEBUG -jar target/tc-asciidoc-rest-*-launcher.jar

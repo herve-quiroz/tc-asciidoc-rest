@@ -21,6 +21,7 @@ import org.apache.log4j.PatternLayout;
 import org.eclipse.jetty.server.Server;
 import org.eclipse.jetty.servlet.ServletContextHandler;
 import org.eclipse.jetty.servlet.ServletHolder;
+import org.trancecode.asciidoc.AsciiDoc;
 
 /**
  * @author Herve Quiroz
@@ -49,6 +50,9 @@ public final class Launcher
             level = Level.toLevel(levelName);
         }
         org.apache.log4j.Logger.getRootLogger().setLevel(level);
+
+        // Force Asciidoc initialization
+        AsciiDoc.initialize();
 
         final String portString = System.getProperty(PROPERTY_HTTP_PORT, System.getenv(ENV_HTTP_PORT));
         final int port = portString != null ? Integer.valueOf(portString) : DEFAULT_HTTP_PORT;

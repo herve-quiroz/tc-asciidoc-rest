@@ -59,7 +59,6 @@ Example use: http://asciidoc.trancecode.org/html/github.com/herve-quiroz/tc-asci
 
 == TODO
 
-- Cache the result pages
 - Replace `.html` suffix by `.asciidoc` when needed
 - PDF output
 

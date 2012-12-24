@@ -1,5 +1,6 @@
-tc-asciidoc-rest
-A REST endpoint to render Asciidoc source files
+tc-asciidoc-rest: A REST endpoint to render Asciidoc source files
+========================================================================
+Herve Quiroz <herve.quiroz@trancecode.org>
 
 == Build
 

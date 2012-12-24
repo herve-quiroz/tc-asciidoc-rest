@@ -1,4 +1,4 @@
-
+tc-asciidoc-rest
 A REST endpoint to render Asciidoc source files
 
 == Build
